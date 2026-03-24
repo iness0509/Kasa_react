@@ -11,7 +11,7 @@
   position: absolute;
   content: "";
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.6); 
 }
 
 .kasa-banner-img {
@@ -31,3 +31,11 @@
   font-size: 48px;
   font-weight: 700; 
  }
+
+ .kasa-banner.banner-about::before{
+  opacity: 0.6;
+ }
+
+ .kasa-banner.banner-about {
+  box-shadow: none;
+}
