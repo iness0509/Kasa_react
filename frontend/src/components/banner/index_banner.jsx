@@ -1,20 +1,12 @@
 import "./style_banner.css";
-import BannerImg from "../../assets/banner.jpg";
 
-function Banner() {
+function Banner({ image, text, className = ""}) {
   return (
-    <section className="kasa-banner">
-      <img
-        className="kasa-banner-img"
-        src={BannerImg}
-        alt="la bannière"
-      />
-      <p className="kasa-banner-text">
-        Chez vous, partout et ailleurs
-      </p>
+    <section className={`kasa-banner ${className}`}>
+      <img className="kasa-banner-img" src={image} alt={text} />
+      <p className="kasa-banner-text">{text}</p>
     </section>
   );
-} 
+}
 
 export default Banner;
-
