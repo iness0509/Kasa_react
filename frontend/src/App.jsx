@@ -1,17 +1,17 @@
-import { BrowserRouter} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/header/index_header";
-import Banner from "./components/banner/index_banner";
+import Home from "./pages/home";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
       <main>
-         <Banner />
-        
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
       </main>
     </BrowserRouter>
   );
 }
 export default App;
-
