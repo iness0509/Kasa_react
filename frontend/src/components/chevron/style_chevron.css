@@ -1,0 +1,9 @@
+.chevron-icon {
+  transition: transform 0.2s ease;
+  font-size: 32px;
+}
+
+.chevron-rotated {
+  transform: rotate(180deg);
+}
+
