@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./style_collapse.css";
+import Chevron from "../chevron/index_chevron";
 
 function Collapse({ title, children }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +9,7 @@ function Collapse({ title, children }) {
     <div className="collapse">
       <div className="title-collapse" onClick={() => setIsOpen(!isOpen)}>
         <h3>{title}</h3>
-        <i className={`fas fa-chevron-${isOpen ? "down" : "up"}`}></i>
+         <Chevron direction="down" rotated={isOpen} />
       </div>
 
       {isOpen && <div className="content-collapse">{children}</div>}
