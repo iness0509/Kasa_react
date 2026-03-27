@@ -2,15 +2,53 @@
   margin: 20px 100px;
 }
 
-.apartment-header h1 {
+.apartment-info h1 {
   font-size: 36px;
   color: #ff6060;
   font-weight: 500;
   margin-bottom: 0px;
 }
 
-.apartment-header p {
+.apartment-info p {
   font-size: 18px;
   font-weight: 500;
   margin-top: 5px;
+}
+
+.apartment-header{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.apartment-aside {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-end;  
+  gap: 10px;
+}
+
+.apartment-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-top: 30px;
+}
+
+.apartment-details .collapse {
+  margin: 0;              
+}
+
+.apartment-details .title-collapse {
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.apartment-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.apartment-details .content-collapse  {
+  height: 220px;       
 }
