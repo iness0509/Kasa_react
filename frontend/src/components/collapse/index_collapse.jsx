@@ -7,10 +7,10 @@ function Collapse({ title, children }) {
 
   return (
     <div className={`collapse ${isOpen ? "open" : ""}`}>
-      <div className="title-collapse" onClick={() => setIsOpen(!isOpen)}>
+       <button className="title-collapse" onClick={() => setIsOpen(!isOpen)}>
         <h3>{title}</h3>
         <Chevron direction="up" rotated={isOpen} />
-      </div>
+      </button>
       <div className={`content-collapse ${isOpen ? "open" : ""}`}>
         {children}
       </div>

@@ -61,5 +61,9 @@
   .chevron-slider {
   font-size: 24px;
 }
+
+.slider-counter {
+    display: none;
+  }
 }
 
