@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react";
 
+// Hook pour récupérer des données depuis une URL
 export function useFetch(url) {
-  const [data, setData] = useState(null);       
-  const [loading, setLoading] = useState(true); 
-  const [error, setError] = useState(null);     
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (!url) return;
-
-    let cancelled = false;
 
     const fetchData = async () => {
       try {
@@ -18,30 +17,19 @@ export function useFetch(url) {
         const response = await fetch(url);
 
         if (!response.ok) {
-          throw new Error(`Erreur HTTP : ${response.status}`);
+          throw new Error("Erreur lors du chargement");
         }
 
         const json = await response.json();
-
-        if (!cancelled) {
-          setData(json);
-        }
-      } catch (err) {
-        if (!cancelled) {
-          setError(err.message || "Erreur inconnue");
-        }
+        setData(json);
+      } catch {
+        setError("Erreur de chargement");
       } finally {
-        if (!cancelled) {
-          setLoading(false);
-        }
+        setLoading(false);
       }
     };
 
     fetchData();
-
-    return () => {
-      cancelled = true;
-    };
   }, [url]);
 
   return { data, loading, error };

@@ -5,12 +5,14 @@ import { useFetch } from "../../data/usefetch";
 const API_BASE_URL = "http://localhost:8080/api";
 
 function Gallery() {
-  const { data: apartments, loading, error } = useFetch(
-    `${API_BASE_URL}/properties`
-  );
+  const {
+    data: apartments,
+    loading,
+    error,
+  } = useFetch(`${API_BASE_URL}/properties`);
 
   if (loading) return <p>Chargement...</p>;
-  if (error) return <p>Erreur : {error}</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <section className="gallery">
